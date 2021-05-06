@@ -1,0 +1,98 @@
+  <!-- ======= Pricing Section ======= -->
+  <section id="pricing" class="pricing">
+    
+    <div class="container" data-aos="fade-left">
+      <div class="">
+          <a routerLink="/start/create-autoecole" class="btn btn-lg btn-primary"><i class="bi bi-arrow-left"> Retour</i></a>
+          <!-- <button type="submit" class="btn btn-lg btn-primary">Sign up</button> -->
+      </div>
+      <header class="section-header">
+        <p>Choisissez votre plan tarifaire</p>
+      </header>
+      <!-- data-aos="zoom-in" data-aos-delay="400" -->
+      <div class="row gy-4 align-center" data-aos="fade-left">
+
+        <div class="col-lg-3 col-md-6 ">
+          <div class="box">
+            <h3 style="color: #07d5c0;">Plan Gratuit</h3>
+            <div class="price"><sup>FCFA</sup>0<span> <br> / Session / Etudiant</span></div>
+            <img src="assets/landing/assets/img/pricing-free.png" class="img-fluid" alt="">
+            <ul>
+              <li>Au plus 15 étudiants</li>
+              <li>Inscription</li>
+              <li>Paiement en ligne</li>
+              <li>Partage de document (5 Mo max)</li>
+              <li>Session</li>
+              <li>Examen</li>
+              <li>Forum de discution</li>
+              <li class="na">Devoir</li>
+            </ul>
+            <a (click)="choixTarif('gratuit')" class="btn-buy">Achetez</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" >
+          <div class="box">
+            <span class="featured">Featured</span>
+            <h3 style="color: #65c600;">Plan Débutant</h3>
+            <div class="price"><sup>FCFA</sup>500<span> <br> / Session / Etudiant</span></div>
+            <img src="assets/landing/assets/img/pricing-starter.png" class="img-fluid" alt="">
+            <ul>
+              <li>Au plus 100 étudiants</li>
+              <li>Inscription</li>
+              <li>Paiement en ligne</li>
+              <li>Partage de document (au plus 100 Mo)</li>
+              <li>Examen</li>
+              <li>Forum de discution</li>
+              <li>Devoir</li>
+              <li class="na">Integration GSuite</li>
+            </ul>
+            <a (click)="choixTarif('debutant')" class="btn-buy">Achetez</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="box">
+            <h3 style="color: #ff901c;">Plan Business</h3>
+            <div class="price"><sup>FCFA</sup>1000<span> <br> / Session / Etudiant</span></div>
+            <img src="assets/landing/assets/img/pricing-business.png" class="img-fluid" alt="">
+            <ul>
+              <li>Au plus 300 étudiants</li>
+              <li>Inscription</li>
+              <li>Paiement en ligne</li>
+              <li>Partage de document (au plus 100 Mo)</li>
+              <li>Examen</li>
+              <li>Forum de discution</li>
+              <li>Devoir</li>
+              <li>Integration GSuite</li>
+              <li>Gestion agenda de cours</li>
+            </ul>
+            <a (click)="choixTarif('business')" class="btn-buy">Achetez</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" >
+          <div class="box">
+            <h3 style="color: #ff0071;">Plan Ultime</h3>
+            <div class="price"><sup>FCFA</sup>2500<span> <br> / Session / Etudiant</span></div>
+            <img src="assets/landing/assets/img/pricing-ultimate.png" class="img-fluid" alt="">
+            <ul>
+              <li>Nombre illimité d'étudiants</li>
+              <li>Inscription</li>
+              <li>Paiement en ligne</li>
+              <li>Partage de document (Jusqu'a 1Go)</li>
+              <li>Examen</li>
+              <li>Devoir</li>
+              <li>Integration GSuite</li>
+              <li>Gestion agenda de cours</li>
+              <li>Vidéo-conférence</li>
+            </ul>
+            <a (click)="choixTarif('ultime')" class="btn-buy">Achetez</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- End Pricing Section -->

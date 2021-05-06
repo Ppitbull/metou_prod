@@ -1,0 +1,80 @@
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+        <div class="container" data-aos="fade-left">
+            <div class="">
+                <a routerLink="/start/create-autoecole" class="btn btn-lg btn-primary"><i class="bi bi-arrow-left"> Retour</i></a>
+                <!-- <button type="submit" class="btn btn-lg btn-primary">Sign up</button> -->
+            </div>
+          <header class="section-header">
+            <p>Confirmez vos informations</p>
+          </header>
+  
+          <div class="row gy-4">
+  
+            <div class="col-lg-6">
+  
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <div class="info-box">
+                    <i class="bi bi-building"></i>
+                    <h3>Mon Auto-Ecole</h3>
+                    <p> </p>
+                    <h4> {{autoEcole.nom}}</h4><br>
+
+                    <h4>Description</h4>
+                    <p> {{autoEcole.description  || "Non définis"}} </p><br>
+
+                    <h4>Localisation</h4>
+                    <p> {{autoEcole.localisation  || "Non définis"}} </p><br>
+
+                    <h4>Site web</h4>
+                    <p> {{autoEcole.sitewebUrl  || "Non définis"}} </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-box">
+                    <i class="bi bi-person-circle"></i>
+                    <h3>Administrateur</h3>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+            <div class="col-lg-6">
+              <div class="info-box">
+                <i class="bi bi-cart"></i>
+                <h3>Mon plan tarrifaire</h3>
+                <div id="pricing" class="pricing">
+                  <div class="text-center">
+                    <h3 style="color: #07d5c0;">Plan Gratuit</h3>
+                    <div class="price"><sup class="">FCFA</sup>0<span> / Session / Etudiant</span></div>
+                    <img src="assets/landing/assets/img/pricing-free.png" class="img-fluid" alt="">
+                    <ul>
+                      <li>Au plus 15 étudiants</li>
+                      <li>Inscription</li>
+                      <li>Paiement en ligne</li>
+                      <li>Partage de document (5 Mo max)</li>
+                      <li>Session</li>
+                      <li>Examen</li>
+                      <li>Forum de discution</li>
+                      <li class="na">Devoir</li>
+                    </ul>
+                  </div>
+                </div>
+
+
+
+              </div>  
+            </div>
+  
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-lg btn-primary">Confirmer <i class="fa fa-thumbs-up"></i></button>
+          </div>
+          
+        </div>
+  
+      </section><!-- End Contact Section -->

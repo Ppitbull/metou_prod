@@ -1,0 +1,61 @@
+<div class="container d-flex flex-column">
+    <div class="row vh-100">
+        <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+            <div class="d-table-cell align-middle">
+                <div class="text-center mt-4">
+                    <h1 class="h2">Creer votre auto-école</h1>
+                    <p class="lead">
+                        Etape 1/4
+                    </p>                       
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="m-sm-4">
+                            <div class="text-center">
+                                <img src="./../../../../assets/landing/assets/img/apple-touch-icon.png" alt="" class="img-fluid rounded-circle" width="132" height="132" />
+                            </div>
+                            <form [formGroup]="form" (ngSubmit)="submitForm()">
+                                <div class="mb-3">
+                                    <label class="form-label">Auto-Ecole</label>
+                                    <input class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitedForm && form.controls.auto_ecole_name.errors }" formControlName="auto_ecole_name" type="text" name="auto_ecole" placeholder="Nom-de-votre-auto-ecole" />
+                                    <div *ngIf="submitedForm && form.controls.auto_ecole_name.invalid"
+                                        class="invalid-feedback text-danger">
+                                        <div *ngIf="form.controls.auto_ecole_name.errors.required">Le nom de l'auto-école est obligatoire</div>
+                                        <div *ngIf="form.controls.auto_ecole_name.errors.minlength">Le nom de l'auto-école doit avoir au minimum 6 charactéres</div>
+                                    </div>
+                                </div>                               
+                                <div class="mb-3">
+                                    <label class="form-label">Localisation (Optionnel)</label>
+                                    <input class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitedForm && form.controls.auto_ecole_localisation.errors }" formControlName="auto_ecole_localisation" type="text" placeholder="Ex: Mandjack Bangangté, Ouest Cameroun" />
+                                    <div *ngIf="submitedForm && form.controls.auto_ecole_localisation.errors"
+                                        class="invalid-feedback text-danger">
+                                        <div *ngIf="form.controls.auto_ecole_localisation.errors.minlength">Les informations de localisation doivent avoir au moins 6 charactéres</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Site web (Optionnel)</label>
+                                    <input type="text" [ngClass]="{ 'is-invalid': submitedForm && form.controls.auto_ecole_site_web.errors }"  formControlName="auto_ecole_site_web" class="form-control form-control-lg" />
+                                    <div *ngIf="submitedForm && form.controls.auto_ecole_site_web.errors"
+                                        class="invalid-feedback text-danger">
+                                        <div *ngIf="form.controls.auto_ecole_site_web.errors.pattern">Le lien du site web n'est pas conforme</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Description (Optionnel)</label>
+                                    <textarea  [ngClass]="{ 'is-invalid': submitedForm && form.controls.auto_ecole_description.errors }" name="auto_ecole_site_web"  formControlName="auto_ecole_description" id="" cols="30" rows="5" class="form-control form-control-lg"></textarea>
+                                    <div *ngIf="submitedForm && form.controls.auto_ecole_description.errors"
+                                        class="invalid-feedback text-danger">
+                                    </div>
+                                </div>                                
+                                <div class="text-center mt-3">
+                                    <button type="submit" class="btn btn-lg btn-primary">Suivant <i class="bi bi-arrow-right"></i></button>
+                                    <!-- <button type="submit" class="btn btn-lg btn-primary">Sign up</button> -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
