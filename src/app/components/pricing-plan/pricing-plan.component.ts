@@ -35,6 +35,7 @@ export class PricingPlanComponent implements OnInit {
         break;
     }
     this.createAutoEcoleService.planTarifaire=this.planTarifaire;
+    console.log(this.createAutoEcoleService.planTarifaire)
     this.router.navigate(['/start/end-setting'])
   }
 

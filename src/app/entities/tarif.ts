@@ -1,14 +1,23 @@
 import { Entity } from "./entity";
 
-export class TarifConstante
+export enum TarifImage
 {
-    static GRATUIT="gratuit";
-    static DEBUTANT="debutant";
-    static BUSINESS="business";
-    static ULTIME="ultime"
+    GRATUIT="assets/landing/assets/img/pricing-free.png",
+    DEBUTANT="assets/landing/assets/img/pricing-starter.png",
+    BUSINESS="assets/landing/assets/img/pricing-business.png",
+    ULTIME="assets/landing/assets/img/pricing-ultimate.png"
+}
+
+export enum TarifConstante
+{
+    GRATUIT="Gratuit",
+    DEBUTANT="Debutant",
+    BUSINESS="Business",
+    ULTIME="Ultime"
 }
 export abstract class Tarif extends Entity
 {
+    plan:string=""
     prix_session_etudiant=0;
     nombreEtudiat:Number=0;
     inscription:boolean=false;
@@ -32,12 +41,14 @@ export class PlanGratuit extends Tarif
     session=true;
     examen=true;
     forumDiscution=true;
+    plan=TarifConstante.GRATUIT;
 }
 
 export class PlanDebutant extends PlanGratuit
 {
     devoir=true;
     prix_session_etudiant=500;
+    plan=TarifConstante.DEBUTANT
 }
 
 export class PlanBusiness extends PlanDebutant
@@ -45,11 +56,13 @@ export class PlanBusiness extends PlanDebutant
     prix_session_etudiant=1000;
     integrationGSuite=true;
     agendaCours=true;
+    plan=TarifConstante.BUSINESS
 }
 
 export class PlanUltime extends PlanBusiness
 {
     prix_session_etudiant=2500;
     videoConference=true; 
+    plan=TarifConstante.ULTIME
 }
 

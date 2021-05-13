@@ -34,7 +34,7 @@ export class CreateAutoecoleComponent implements OnInit {
     this.submitedForm=true;
     if(this.form.invalid) return;
 
-    this.createAutoEcole.autoEcole.nom=this.form.value.nom;
+    this.createAutoEcole.autoEcole.nom=this.form.value.auto_ecole_name;
     this.createAutoEcole.autoEcole.localisation=this.form.value.auto_ecole_localisation;
     this.createAutoEcole.autoEcole.sitewebUrl = this.form.value.auto_ecole_site_web;
     this.createAutoEcole.autoEcole.description = this.form.value.auto_ecole_description;

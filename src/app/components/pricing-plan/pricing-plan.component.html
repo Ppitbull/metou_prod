@@ -1,13 +1,10 @@
   <!-- ======= Pricing Section ======= -->
   <section id="pricing" class="pricing">
     
-    <div class="container" data-aos="fade-left">
-      <div class="">
-          <a routerLink="/start/create-autoecole" class="btn btn-lg btn-primary"><i class="bi bi-arrow-left"> Retour</i></a>
-          <!-- <button type="submit" class="btn btn-lg btn-primary">Sign up</button> -->
-      </div>
+    <div class="container" data-aos="fade-left">      
       <header class="section-header">
         <p>Choisissez votre plan tarifaire</p>
+        <span class="lead">Etape 3/4</span>
       </header>
       <!-- data-aos="zoom-in" data-aos-delay="400" -->
       <div class="row gy-4 align-center" data-aos="fade-left">
@@ -27,7 +24,7 @@
               <li>Forum de discution</li>
               <li class="na">Devoir</li>
             </ul>
-            <a (click)="choixTarif('gratuit')" class="btn-buy">Achetez</a>
+            <a (click)="choixTarif('Gratuit')" class="btn-buy">Achetez</a>
           </div>
         </div>
 
@@ -47,7 +44,7 @@
               <li>Devoir</li>
               <li class="na">Integration GSuite</li>
             </ul>
-            <a (click)="choixTarif('debutant')" class="btn-buy">Achetez</a>
+            <a (click)="choixTarif('Debutant')" class="btn-buy">Achetez</a>
           </div>
         </div>
 
@@ -67,7 +64,7 @@
               <li>Integration GSuite</li>
               <li>Gestion agenda de cours</li>
             </ul>
-            <a (click)="choixTarif('business')" class="btn-buy">Achetez</a>
+            <a (click)="choixTarif('Business')" class="btn-buy">Achetez</a>
           </div>
         </div>
 
@@ -87,12 +84,15 @@
               <li>Gestion agenda de cours</li>
               <li>Vidéo-conférence</li>
             </ul>
-            <a (click)="choixTarif('ultime')" class="btn-buy">Achetez</a>
+            <a (click)="choixTarif('Ultime')" class="btn-buy">Achetez</a>
           </div>
         </div>
 
       </div>
-
+      <div class="">
+        <a routerLink="/start/create-admin-account" class="btn btn-lg btn-primary"><i class="bi bi-arrow-left"> Retour</i></a>
+        <!-- <button type="submit" class="btn btn-lg btn-primary">Sign up</button> -->
+    </div>
     </div>
 
   </section><!-- End Pricing Section -->
