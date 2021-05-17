@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthorizedLayoutComponent } from 'src/app/layout/authorized/authorized-layout/authorized-layout.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 
@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     component: AuthorizedLayoutComponent,
     children: [
-      { path: 'dashbord', component: DashboardComponent, pathMatch: 'full'},
+      { path: 'home', component: LandingPageComponent, pathMatch: 'full'},
     ]
   },
 ];
@@ -19,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AdminRoutingModule { }
+export class FrontOfficeRoutingModule { }
