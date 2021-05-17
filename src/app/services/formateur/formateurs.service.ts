@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AutoEcoleFormateur } from '../entities/account';
-import { AutoEcole } from '../entities/autoecole';
-import { EntityID } from '../entities/entityid';
-import { ResultAPI } from '../utils/resultapi';
+import { ResultAPI } from 'src/app/utils/entities/resultapi';
+import { AutoEcoleFormateur } from '../../entities/accounts';
+import { AutoEcole } from '../../entities/autoecole';
+import { EntityID } from '../../entities/entityid';
 
 @Injectable({
   providedIn: 'root'

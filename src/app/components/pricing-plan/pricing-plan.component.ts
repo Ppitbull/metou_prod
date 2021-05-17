@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlanBusiness, PlanDebutant, PlanGratuit, PlanUltime, Tarif, TarifConstante } from 'src/app/entities/tarif';
-import { CreateAutoEcoleService } from 'src/app/services/create-auto-ecole.service';
+import { CreateAutoEcoleService } from 'src/app/services/create-auto-ecole/create-auto-ecole.service';
 
 @Component({
   selector: 'app-pricing-plan',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AutoEcole } from '../entities/autoecole';
-import { AutoEcoleAdmin } from '../entities/account';
-import { ApiService } from './api.service';
+import { AutoEcole } from '../../entities/autoecole';
+import { AutoEcoleAdmin } from '../../entities/accounts';
+import { ApiService } from '../../utils/services/api/api.service';
 
 @Injectable({
   providedIn: 'root'

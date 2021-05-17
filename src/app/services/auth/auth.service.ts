@@ -1,13 +1,12 @@
 import { Injectable, ɵConsole } from '@angular/core';
 import { Router } from '@angular/router';
-// import { ToastrService } from 'ngx-toastr';
-// import { ApiService } from '../api/api.service';
-// import { UserService } from '../user/user.service';
-// import { Provider, User } from '../../entity/provider';
+
 import { BehaviorSubject, Subject } from 'rxjs';
 // import { UserLocalStorageData, UserlocalstorageService } from '../localstorage/userlocalstorage.service';
 import * as EventEmitter from 'events';
-import { EventService } from '../events/event.service';
+import { EventService } from '../../events/event.service';
+import { User } from 'src/app/entities/accounts';
+
 
 
 @Injectable({
@@ -15,12 +14,11 @@ import { EventService } from '../events/event.service';
 })
 export class AuthService {
 
-  // currentUser:  = new Provider();
-  // currentUserSubject: BehaviorSubject<>=new BehaviorSubject<Provider>(this.currentUser);
-  isLoggedIn = false;
+  currentUser: User = new User();
+  isLoggedIn: boolean = false;
+  currentUserSubject: BehaviorSubject<User> = new BehaviorSubject<User>(this.currentUser);
 
   constructor(
-    // private firebaseAuth: AngularFireAuth,
     private router: Router,
     // private api: ApiService,
     // private toastr: ToastrService,

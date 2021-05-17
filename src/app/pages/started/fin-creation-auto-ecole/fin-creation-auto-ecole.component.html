@@ -53,7 +53,7 @@
                 <h3>Mon plan tarrifaire</h3>
                 <div id="pricing" class="pricing">
                   <div class="text-center">
-                    <h3 style="color: {{planColor}};">Plan {{planTarifaireName}}</h3>
+                    <h3 style="color: {{planColor}}">Plan {{planTarifaireName}}</h3>
                     <div class="price"><sup class="">FCFA</sup>{{planTarifaire.prix_session_etudiant}}<span> <br> / Session / Etudiant</span></div>
                     <img [src]="imgPlan" class="img-fluid" alt="">
                     <ul>
@@ -81,7 +81,7 @@
               <!-- <button type="submit" class="btn btn-lg btn-primary">Sign up</button> -->
             </div>
             <div class="col-6 text-center">
-              <button type="submit" class="btn btn-lg btn-success"> <i class="bi bi-check-circle"></i> Confirmer <i class="fa fa-thumbs-up"></i></button>
+              <button (click)="createAutoEcoleSubmit()" class="btn btn-lg btn-success"> <i class="bi bi-check-circle"></i> Confirmer <i class="fa fa-thumbs-up"></i></button>
             </div>
          </div>
           
