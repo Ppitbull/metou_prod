@@ -47,7 +47,7 @@ export class Request
 
     serializeDataToUrl():string
     {
-        let endpoint="";
+        let endpoint=this.link.toString();
         if (this.data) {
             let req: String = '';
             for (const key in this.data) {

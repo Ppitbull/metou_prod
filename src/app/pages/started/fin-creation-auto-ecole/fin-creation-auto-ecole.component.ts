@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { AutoEcoleAdmin } from 'src/app/entities/accounts';
 import { AutoEcole } from 'src/app/entities/autoecole';
 import { PlanBusiness, Tarif, TarifConstante, TarifImage } from 'src/app/entities/tarif';
@@ -20,7 +21,10 @@ export class FinCreationAutoEcoleComponent implements OnInit {
   planColor:String="";
   imgPlan="";
 
-  constructor(private createAutoEcole:CreateAutoEcoleService) {
+  showPopUp:boolean=false;
+  popup_message:String="waite"
+
+  constructor(private createAutoEcole:CreateAutoEcoleService,private router:Router) {
     this.autoEcole=this.createAutoEcole.autoEcole;
     this.admin=this.createAutoEcole.autoEcoleAdminAccount;
     this.planTarifaire=this.createAutoEcole.planTarifaire;
@@ -51,15 +55,33 @@ export class FinCreationAutoEcoleComponent implements OnInit {
 
   createAutoEcoleSubmit()
   {
+    this.showPopUp=true;
+    this.popup_message="Creation du compte administrateur...."
     this.createAutoEcole
-    .newAutoEcole()
+    .createAdminAccount()
     .then((result)=>
     {
-
+      this.popup_message="Sauvegarde des parametres administrateur...";
+      return this.createAutoEcole.saveAdminAccount()
+    })
+    .then((result)=>{
+      this.popup_message="Parametrage de votre auto-ecole....";
+      return this.createAutoEcole.saveAutoEcoleInformation()
+    })
+    .then((result)=>{
+      this.popup_message="Redirection vers votre espace...";
+      setTimeout(()=>{
+        this.popup_message="";
+        this.showPopUp=false;
+        this.router.navigate(['/client',this.autoEcole.id.toString()]);
+      })
     })
     .catch((result)=>{
-
+      this.popup_message="";
+      this.showPopUp=false;
+      //show notification erreur
     })
+    
   }
 
 }

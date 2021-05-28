@@ -11,8 +11,7 @@ import { CreateAutoecoleComponent } from './create-autoecole/create-autoecole.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from 'src/app/layout/layout.module';
 import { BrowserModule } from '@angular/platform-browser';
-
-
+import { LoaderModule } from 'src/app/components/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -25,11 +24,11 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     CommonModule,
-    BrowserModule,
     StartedRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    LayoutModule
+    LayoutModule,
+    LoaderModule
   ]
 })
 export class StartedModule { }

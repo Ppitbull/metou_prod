@@ -11,9 +11,14 @@ export class ApiService {
     private http:HttpClient
   ) { }
 
-  get(request:Request)
+  get(request:Request):Promise<any>
   {
-    this.http.get(request.serializeDataToUrl(),{'headers':request.headerData})
+    return new Promise<any>((resolve,reject)=>{
+      this.http.get(request.serializeDataToUrl(),{'headers':request.headerData})
+      .subscribe((result)=>{
+        resolve(result);
+      },(error)=>reject(error))
+    })
   }
 
   put(request:Request)

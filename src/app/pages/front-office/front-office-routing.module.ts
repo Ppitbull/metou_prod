@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthorizedLayoutComponent } from 'src/app/layout/authorized/authorized-layout/authorized-layout.component';
+import { GuestLayoutComponent } from 'src/app/layout/guest/guest-layout/guest-layout.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
@@ -8,15 +9,15 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 const routes: Routes = [
   {
     path: '',
-    component: AuthorizedLayoutComponent,
+    component: GuestLayoutComponent,
     children: [
-      { path: 'home', component: LandingPageComponent, pathMatch: 'full'},
+      { path: '', component: LandingPageComponent, pathMatch: 'full'},
     ]
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class FrontOfficeRoutingModule { }

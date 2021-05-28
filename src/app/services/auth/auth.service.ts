@@ -6,6 +6,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import * as EventEmitter from 'events';
 import { EventService } from '../../events/event.service';
 import { User } from 'src/app/entities/accounts';
+import { ActionStatus, FireBaseApi } from 'src/app/utils/services/firebase';
 
 
 
@@ -24,6 +25,7 @@ export class AuthService {
     // private toastr: ToastrService,
     // private user: UserService,
     // private localStorageService:UserlocalstorageService,
+    private firebaseApi:FireBaseApi,
     private eventService:EventService
   ) {
 
@@ -65,11 +67,20 @@ export class AuthService {
    *  Create an account on the drupal platform
    *
    */
-  createAccount(data): Promise<any> {
+  createAccount(user:User): Promise<ActionStatus> {
 
     return new Promise((resolve, reject) => {
-
-      
+      this.firebaseApi.createUserApi(user.email.toString(), user.mdp.toString())
+        .then((result:ActionStatus) => {
+          user.dateCreation = (new Date()).toISOString();
+          user.id=result.result.uid;
+          result.result=user;
+          resolve(result);
+        })
+        .catch(e => {
+          this.firebaseApi.handleApiError(e);
+          reject(e)
+        })      
     });
 
   }

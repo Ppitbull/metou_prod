@@ -224,7 +224,7 @@ export class FirebaseApi {
       firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
           result.description = 'Account was created successful';
-          result.result = userCredential;
+          result.result = userCredential.user;
           resolve(result);
         })
         .catch((error) => {

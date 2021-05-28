@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule } from "@angular/router";
 import { AuthorizedFooterComponent } from "./authorized/authorized-footer/authorized-footer.component";
 import { AuthorizedLayoutComponent } from "./authorized/authorized-layout/authorized-layout.component";
 import { AuthorizedLeftSidenavComponent } from "./authorized/authorized-left-sidenav/authorized-left-sidenav.component";
@@ -28,7 +29,7 @@ import { StartedLayoutComponent } from "./started/started-layout/started-layout.
     ],
     imports: [
       CommonModule,
-      BrowserModule
+      RouterModule
     ],
     exports:[
         AuthorizedFooterComponent,

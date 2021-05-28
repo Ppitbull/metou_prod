@@ -34,7 +34,7 @@
               "src/assets/landing/assets/vendor/aos/aos.css",
               "src/assets/landing/assets/vendor/remixicon/remixicon.css",
               "src/assets/landing/assets/vendor/swiper/swiper-bundle.min.css",
-              "src/assets/landing/assets/vendor/glightbox/css/glightbox.min.css",
+              "src/assets/landing/assets/vendor/glightbox/css/glightbox.min.css"
             ],
             "scripts": [
               "src/assets/landing/assets/vendor/bootstrap/js/bootstrap.bundle.js",
