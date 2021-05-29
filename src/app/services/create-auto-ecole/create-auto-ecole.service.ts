@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { ActionStatus } from 'src/app/utils/services/firebase';
-import { UserService } from 'src/app/services/user/user.service';
-// import { ActionStatus } from 'src/app/utils/services/firebase';
 import { AutoEcoleAdmin } from '../../entities/accounts';
 import { AutoEcole } from '../../entities/autoecole';
 import { Tarif } from '../../entities/tarif';
 import { AuthService } from '../auth/auth.service';
 import { AutoecoleService } from '../autoecole/autoecole.service';
+import { UserService } from '../user/user.service';
 
 @Injectable({
   providedIn: 'root'

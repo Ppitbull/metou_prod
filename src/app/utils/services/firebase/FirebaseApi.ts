@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import { ActionStatus } from './actionstatus';
 import { FireBaseConstant } from './firebase-constant'
+// declare var firebase:any;
 
 @Injectable({
   providedIn: 'root'

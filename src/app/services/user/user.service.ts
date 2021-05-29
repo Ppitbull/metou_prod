@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { FirebaseApi } from '../../utils/services/firebase/FirebaseApi';
-import { FireBaseConstant } from '../../utils/services/firebase/firebase-constant';
 import { User } from 'src/app/entities/accounts';
-import { ActionStatus } from '../../utils/services/firebase';
 import { EntityID } from 'src/app/entities/entityid';
+import { ActionStatus } from 'src/app/utils/services/firebase';
+import { FirebaseApi } from 'src/app/utils/services/firebase/FirebaseApi';
 // import { AuthService } from '../auth/auth.service';
 
 

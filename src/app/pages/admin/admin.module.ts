@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutModule } from 'src/app/layout/layout.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { ProfilComponent } from './profil/profil.component';
+import { ParametresComponent } from './parametres/parametres.component';
 
 
 
@@ -13,6 +15,8 @@ import { BrowserModule } from '@angular/platform-browser';
   declarations: [
     AdminHomeComponent,
     DashboardComponent,
+    ProfilComponent,
+    ParametresComponent,
   ],
   imports: [
     CommonModule,
