@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthorizedLayoutComponent } from 'src/app/layout/authorized/authorized-layout/authorized-layout.component';
+import { CoursComponent } from './cours/cours.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ParametresComponent } from './parametres/parametres.component';
 import { ProfilComponent } from './profil/profil.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
       // {path:'',redirectTo:'dashbord'}, 
       { path: 'dashboard', component: DashboardComponent, pathMatch: 'full'},  
       { path: 'profil', component: ProfilComponent, pathMatch: 'full'},
-      { path: 'parametres', component: ParametresComponent, pathMatch: 'full'},         
+      { path: 'parametres', component: ParametresComponent, pathMatch: 'full'},
+      { path: 'cours', component: CoursComponent, pathMatch: 'full'},         
     ]
   },
   

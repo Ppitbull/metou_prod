@@ -8,6 +8,8 @@ import { LayoutModule } from 'src/app/layout/layout.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProfilComponent } from './profil/profil.component';
 import { ParametresComponent } from './parametres/parametres.component';
+import { CoursComponent } from './cours/cours.component';
+import { PdfViewerModule } from 'src/app/components/pdf-viewer/pdf-viewer.module';
 
 
 
@@ -17,13 +19,15 @@ import { ParametresComponent } from './parametres/parametres.component';
     DashboardComponent,
     ProfilComponent,
     ParametresComponent,
+    CoursComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    LayoutModule
+    LayoutModule,
+    PdfViewerModule
   ]
 })
 export class AdminModule { }
