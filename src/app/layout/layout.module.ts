@@ -11,6 +11,7 @@ import { GuestLayoutComponent } from "./guest/guest-layout/guest-layout.componen
 import { GuestTopNavComponent } from "./guest/guest-top-nav/guest-top-nav.component";
 import { PageContentComponent } from "./page-content/page-content.component";
 import { StartedLayoutComponent } from "./started/started-layout/started-layout.component";
+import { AuthorizedMainComponent } from './authorized/authorized-main/authorized-main.component';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { StartedLayoutComponent } from "./started/started-layout/started-layout.
 
         StartedLayoutComponent,
 
-        PageContentComponent
+        PageContentComponent,
+          AuthorizedMainComponent
     ],
     imports: [
       CommonModule,

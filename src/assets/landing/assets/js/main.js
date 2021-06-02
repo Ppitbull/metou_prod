@@ -285,6 +285,8 @@
   }
   window.addEventListener('load', () => {
     aos_init();
+    
+    if(feather) feather.replace()
   });
 
 })();

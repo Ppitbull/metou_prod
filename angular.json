@@ -45,7 +45,8 @@
               "src/assets/landing/assets/vendor/isotope-layout/isotope.pkgd.min.js",
               "src/assets/landing/assets/vendor/glightbox/js/glightbox.min.js",
               "src/assets/landing/assets/js/main.js",
-              "src/assets/authorized/js/app.js"
+              "src/assets/authorized/js/app.js",
+              "node_modules/feather-icons/dist/feather.js"              
             ]
           },
           "configurations": {
