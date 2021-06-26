@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router, } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User } from 'src/app/entities/accounts';
+import { AccountBuilder } from '../../functions/account.builder';
+
 
 export interface UserLocalStorageData
 {
@@ -28,8 +30,8 @@ export class UserlocalstorageService {
           let isLogged:Boolean=JSON.parse(localStorage.getItem("isLoggedIn"));
           if(isLogged)
           {
-            let user:User=new User();
-            user.hydrate(JSON.parse(localStorage.getItem("user")))
+            let user:User= AccountBuilder(JSON.parse(localStorage.getItem("user")));
+            // user.hydrate(JSON.parse(localStorage.getItem("user")))
             this.dataUser.next({
               isLoggedIn:true,
               user

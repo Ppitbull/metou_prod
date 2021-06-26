@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 
 import { BehaviorSubject, Subject } from 'rxjs';
 // import { UserLocalStorageData, UserlocalstorageService } from '../localstorage/userlocalstorage.service';
-import * as EventEmitter from 'events';
 import { EventService } from '../../events/event.service';
 import { User } from 'src/app/entities/accounts';
 import { ActionStatus, FireBaseApi } from 'src/app/utils/services/firebase';
+import { UserlocalstorageService } from 'src/app/utils/services/localstorage/userlocalstorage.service';
 
 
 
@@ -24,7 +24,7 @@ export class AuthService {
     // private api: ApiService,
     // private toastr: ToastrService,
     // private user: UserService,
-    // private localStorageService:UserlocalstorageService,
+    private localStorageService:UserlocalstorageService,
     private firebaseApi:FireBaseApi,
     private eventService:EventService
   ) {
