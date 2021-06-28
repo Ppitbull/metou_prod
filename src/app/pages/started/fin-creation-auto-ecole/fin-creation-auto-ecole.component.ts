@@ -4,6 +4,7 @@ import { AutoEcoleAdmin } from 'src/app/entities/accounts';
 import { AutoEcole } from 'src/app/entities/autoecole';
 import { PlanBusiness, Tarif, TarifConstante, TarifImage } from 'src/app/entities/tarif';
 import { CreateAutoEcoleService } from 'src/app/services/create-auto-ecole/create-auto-ecole.service';
+import { ActionStatus } from 'src/app/utils/services/firebase';
 
 @Component({
   selector: 'app-fin-creation-auto-ecole',
@@ -59,26 +60,27 @@ export class FinCreationAutoEcoleComponent implements OnInit {
     this.popup_message="Creation du compte administrateur...."
     this.createAutoEcole
     .createAdminAccount()
-    .then((result)=>
+    .then((result:ActionStatus)=>
     {
       this.popup_message="Sauvegarde des parametres administrateur...";
       return this.createAutoEcole.saveAdminAccount()
     })
-    .then((result)=>{
+    .then((result:ActionStatus)=>{
       this.popup_message="Parametrage de votre auto-ecole....";
       return this.createAutoEcole.saveAutoEcoleInformation()
     })
-    .then((result)=>{
+    .then((result:ActionStatus)=>{
       this.popup_message="Redirection vers votre espace...";
       setTimeout(()=>{
         this.popup_message="";
         this.showPopUp=false;
-        this.router.navigate(['/client',this.autoEcole.id.toString()]);
+        this.router.navigate(['/client']); //,this.autoEcole.id.toString()
       })
     })
-    .catch((result)=>{
-      this.popup_message="";
+    .catch((result:ActionStatus)=>{
+      this.popup_message=result.message;
       this.showPopUp=false;
+      console.log("Error ",result)
       //show notification erreur
     })
     

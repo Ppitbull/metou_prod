@@ -24,7 +24,7 @@ export class CreateAutoEcoleService {
   }
   saveAdminAccount():Promise<ActionStatus>
   {    
-    this.autoEcole.planTarif.hydrate(this.planTarifaire.toString())
+    this.autoEcole.planTarif=this.planTarifaire;
     return this.userService.addUser(this.autoEcoleAdminAccount);
   }
   saveAutoEcoleInformation():Promise<ActionStatus>

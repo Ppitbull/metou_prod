@@ -22,6 +22,7 @@ export class User extends Entity
         {
             if(Reflect.has(this,key)) {
                 if(key=="id") this.id.setId(entity.id)
+                if(key=="autoEcoleID") this.autoEcoleID.setId(entity.id)
                 else Reflect.set(this,key,entity[key]);
             }
         }
@@ -33,6 +34,7 @@ export class User extends Entity
         for(const k of Object.keys(this))
         {
             if(k=="id") r[k]=this.id.toString();
+            if(k=="autoEcoleID") r[k]=this.autoEcoleID.toString();
             else r[k]=Reflect.get(this,k);
         }
         return r;

@@ -12,14 +12,13 @@ import { FireBaseConstant } from './firebase-constant'
 export class FirebaseApi {
 
   static firebaseConfig: any = {
-    apiKey: 'AIzaSyCIi9bNVRxjBxEF5FgUsJwivy1bGH34EzY',
-    authDomain: 'momo-coin-23837.firebaseapp.com',
-    databaseURL: 'https://momo-coin-23837-default-rtdb.firebaseio.com',
-    projectId: 'momo-coin-23837',
-    storageBucket: 'momo-coin-23837.appspot.com',
-    messagingSenderId: '155737173284',
-    appId: '1:155737173284:web:07f41f5db9527097d017b1',
-    measurementId: 'G-KPM5Z0YSG1'
+    apiKey: "AIzaSyAU-jW0bLBnEo0qxc8sIh7Td8LuG5QoGPs",
+    authDomain: "projet-autoecole.firebaseapp.com",
+    projectId: "projet-autoecole",
+    storageBucket: "projet-autoecole.appspot.com",
+    messagingSenderId: "868491853776",
+    appId: "1:868491853776:web:3f3c85f94856e3054603d5",
+    measurementId: "G-LJEZHJW211"
 
   };
   debug: boolean = false;
@@ -261,9 +260,6 @@ export class FirebaseApi {
       case FireBaseConstant.DESACTIVED_ACCOUNT:
         result.message="Account Disabled. Contacted the administrator for a reactivation"
         break;
-      default:
-        result.message="Unknow error. please contact administrator";
-        break
     };
   }
 }

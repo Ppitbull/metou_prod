@@ -16,7 +16,8 @@ export abstract class Entity
         let r={};
         for(const k of Object.keys(this))
         {
-            r[k]=Reflect.get(this,k);
+            if(k=="id") r[k]=this.id.toString();
+            else r[k]=Reflect.get(this,k);
         }
         return r;
     }
