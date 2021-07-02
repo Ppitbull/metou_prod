@@ -16,6 +16,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { InputTypeNumberModule } from 'src/app/components/input-type-number/input-type-number/input-type-number.module';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { InputTypeNumberModule } from 'src/app/components/input-type-number/inpu
     LayoutModule,
     LoaderModule,
     MatDialogModule,
-    InputTypeNumberModule,    
+    InputTypeNumberModule,
+    MatProgressBarModule,    
     ModalModule.forRoot()
   ]
 })

@@ -1,12 +1,14 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, Inject, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SimpleLoaderComponent } from 'src/app/components/loader/simple-loader/simple-loader.component';
 import { AutoEcoleAdmin } from 'src/app/entities/accounts';
 import { AutoEcole } from 'src/app/entities/autoecole';
 import { PlanBusiness, Tarif, TarifConstante, TarifImage } from 'src/app/entities/tarif';
+import { AutoEcoleProfilService } from 'src/app/services/auto-ecole-profil/auto-ecole-profil.service';
 import { CreateAutoEcoleService } from 'src/app/services/create-auto-ecole/create-auto-ecole.service';
+import { UserProfilService } from 'src/app/services/user-profil/user-profil.service';
 import { ActionStatus } from 'src/app/utils/services/firebase';
 
 @Component({
@@ -27,10 +29,14 @@ export class FinCreationAutoEcoleComponent implements OnInit {
 
   showPopUp:boolean=false;
   popup_message:String="waite"
+  @ViewChild("modalTemplate") modalRef: TemplateRef<any>;
 
-  constructor(private createAutoEcole:CreateAutoEcoleService,
+  constructor(
+    private createAutoEcole:CreateAutoEcoleService,
     private router:Router,
-    private dialog:BsModalService) {
+    private dialog:BsModalService,
+    private userProfilService:UserProfilService,
+    private autoEcoleProfilService:AutoEcoleProfilService) {
     this.autoEcole=this.createAutoEcole.autoEcole;
     this.admin=this.createAutoEcole.autoEcoleAdminAccount;
     this.planTarifaire=this.createAutoEcole.planTarifaire;
@@ -62,13 +68,9 @@ export class FinCreationAutoEcoleComponent implements OnInit {
   createAutoEcoleSubmit()
   {
     this.showPopUp=true;
-    
-    this.popup_message="Creation du compte administrateur...."
-    // let dialogRef =this.dialog.show(SimpleLoaderComponent,
-    //   {
-    //     initialState:{text:this.popup_message.toString()}
-    //   }
-    // );
+    const dialogRef = this.dialog.show(this.modalRef)
+
+    this.popup_message="Creation du compte administrateur...."    
 
     this.createAutoEcole
     .createAdminAccount()
@@ -83,12 +85,14 @@ export class FinCreationAutoEcoleComponent implements OnInit {
     })
     .then((result:ActionStatus)=>{
       this.popup_message="Redirection vers votre espace...";
+      this.userProfilService.setUser(this.createAutoEcole.autoEcoleAdminAccount);
+      this.autoEcoleProfilService.setAutoEcole(this.createAutoEcole.autoEcole);
       setTimeout(()=>{
-        this.popup_message="";
+        // this.popup_message="";
         // dialogRef.hide()
         this.showPopUp=false;
-        this.router.navigate(['/client']); //,this.autoEcole.id.toString()
-      })
+        window.location.href="client/dashboard"; //,this.autoEcole.id.toString()
+      },1000)
     })
     .catch((result:ActionStatus)=>{
       this.popup_message=result.message;

@@ -1,13 +1,16 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
 
-        <div class="container" data-aos="fade-left">           
+        <div class="container" data-aos="fade-left"> 
+          <div class="text-center">
+            <img src="./../../../../assets/img/logo.png" alt="" class="img-fluid" width="132" height="132" />
+        </div>          
           <header class="section-header">
             <p>Confirmez vos informations</p>
             <span class="lead">Etape 4/4</span>
           </header>
   
-          <div class="row gy-4">
+           <div class="row gy-4"> 
   
             <div class="col-lg-6">
   
@@ -89,6 +92,6 @@
   
       </section><!-- End Contact Section -->
 
-      <ng-container *ngIf="showPopUp">
-        <app-popup-loader [text]="popup_message" [show]="true"></app-popup-loader>
-      </ng-container>
+      <ng-template #modalTemplate>        
+        <app-simple-loader [text]="popup_message"></app-simple-loader>
+      </ng-template>

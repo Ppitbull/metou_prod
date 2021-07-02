@@ -6,6 +6,8 @@ import { ActionStatus } from 'src/app/utils/services/firebase';
 import { FirebaseApi } from 'src/app/utils/services/firebase/FirebaseApi';
 // import { AuthService } from '../auth/auth.service';
 
+import * as db_branch_builder from "./../../utils/functions/db-branch.builder"
+
 
 @Injectable({
   providedIn: 'root'
@@ -84,8 +86,14 @@ export class UserService {
     return new Promise<ActionStatus>((resolve, reject) => {
       if (this.listUser.has(user.id.toString())) { return resolve(new ActionStatus()); }
       // console.log("User ",user.toString())
-      this.firebaseApi.set(`users/${user.id.toString()}`, user.toString())
-        .then((result) => {
+      this.firebaseApi.set(db_branch_builder.getBranchOfUserInAutoEcole(user.autoEcoleID,user.id), user.toString())
+      .then((result)=>this.firebaseApi.set(db_branch_builder.getBranchOfMappedUsers(user.id),
+      {
+        user_id:user.id.toString(),
+        auto_ecole_id:user.autoEcoleID.toString(),
+        email:user.email
+      }))
+      .then((result) => {
           this.listUser.set(user.id.toString(), user);
           this.usersSubject.next(this.listUser);
           resolve(new ActionStatus());

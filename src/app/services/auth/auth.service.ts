@@ -6,7 +6,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { EventService } from '../../events/event.service';
 import { User } from 'src/app/entities/accounts';
 import { ActionStatus, FireBaseApi } from 'src/app/utils/services/firebase';
-import { UserlocalstorageService } from 'src/app/utils/services/localstorage/userlocalstorage.service';
+import { LocalStorageService } from 'src/app/utils/services/localstorage/localstorage.service';
 
 
 
@@ -14,44 +14,22 @@ import { UserlocalstorageService } from 'src/app/utils/services/localstorage/use
   providedIn: 'root'
 })
 export class AuthService {
-
-  currentUser: User = new User();
+  
   isLoggedIn: boolean = false;
-  currentUserSubject: BehaviorSubject<User> = new BehaviorSubject<User>(this.currentUser);
 
   constructor(
     private router: Router,
     // private api: ApiService,
     // private toastr: ToastrService,
     // private user: UserService,
-    private localStorageService:UserlocalstorageService,
+    private localStorageService:LocalStorageService,
     private firebaseApi:FireBaseApi,
     private eventService:EventService
   ) {
 
     // this.registResult = false;
-    // this.loginResult = false;
-    // this.localStorageService.dataUser.subscribe((userData:UserLocalStorageData)  => {
-    //   this.isLoggedIn=userData.isLoggedIn;
-    //   this.currentUser=userData.user;
-    // })
+    // this.loginResult = false;    
 
-  }
-
-  /*
-   * resetPassword is used to reset your password.
-   */
-  resetPassword() {
-    // this.toastr.success('Email Sent');
-    this.router.navigate(['/login']);
-  }
-
-  resetDataUser(user)
-  {
-    // this.localStorageService.setUserData({
-    //   isLoggedIn:this.isLoggedIn,
-    //   user
-    // })
   }
 
   /*

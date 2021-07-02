@@ -37,7 +37,7 @@ export class CreateAdminAccountComponent implements OnInit {
   submitForm()
   {
     this.submitedForm=true;
-    console.log("Value form ",this.form.value)
+    // console.log("Value form ",this.form.value)
     if(this.form.invalid) return;
 
     this.createAutoEcole.autoEcoleAdminAccount.nom=this.form.value.nom_admin;
