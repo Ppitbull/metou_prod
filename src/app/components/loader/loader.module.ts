@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SimpleLoaderComponent } from './simple-loader/simple-loader.component';
 import { PopupLoaderComponent } from './popup-loader/popup-loader.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
-
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   ],
   imports: [
     CommonModule,
-    ModalModule.forRoot()
+    MatFormFieldModule,
+    MatProgressBarModule
   ],
   exports:[
     SimpleLoaderComponent,

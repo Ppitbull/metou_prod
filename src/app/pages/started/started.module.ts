@@ -12,6 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from 'src/app/layout/layout.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { LoaderModule } from 'src/app/components/loader/loader.module';
+import {MatDialogModule} from '@angular/material/dialog'; 
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { InputTypeNumberModule } from 'src/app/components/input-type-number/input-type-number/input-type-number.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { LoaderModule } from 'src/app/components/loader/loader.module';
     FormsModule,
     ReactiveFormsModule,
     LayoutModule,
-    LoaderModule
+    LoaderModule,
+    MatDialogModule,
+    InputTypeNumberModule,    
+    ModalModule.forRoot()
   ]
 })
 export class StartedModule { }

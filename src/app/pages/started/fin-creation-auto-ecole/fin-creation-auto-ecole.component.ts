@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { SimpleLoaderComponent } from 'src/app/components/loader/simple-loader/simple-loader.component';
 import { AutoEcoleAdmin } from 'src/app/entities/accounts';
 import { AutoEcole } from 'src/app/entities/autoecole';
 import { PlanBusiness, Tarif, TarifConstante, TarifImage } from 'src/app/entities/tarif';
@@ -25,7 +28,9 @@ export class FinCreationAutoEcoleComponent implements OnInit {
   showPopUp:boolean=false;
   popup_message:String="waite"
 
-  constructor(private createAutoEcole:CreateAutoEcoleService,private router:Router) {
+  constructor(private createAutoEcole:CreateAutoEcoleService,
+    private router:Router,
+    private dialog:BsModalService) {
     this.autoEcole=this.createAutoEcole.autoEcole;
     this.admin=this.createAutoEcole.autoEcoleAdminAccount;
     this.planTarifaire=this.createAutoEcole.planTarifaire;
@@ -57,7 +62,14 @@ export class FinCreationAutoEcoleComponent implements OnInit {
   createAutoEcoleSubmit()
   {
     this.showPopUp=true;
+    
     this.popup_message="Creation du compte administrateur...."
+    // let dialogRef =this.dialog.show(SimpleLoaderComponent,
+    //   {
+    //     initialState:{text:this.popup_message.toString()}
+    //   }
+    // );
+
     this.createAutoEcole
     .createAdminAccount()
     .then((result:ActionStatus)=>
@@ -73,13 +85,15 @@ export class FinCreationAutoEcoleComponent implements OnInit {
       this.popup_message="Redirection vers votre espace...";
       setTimeout(()=>{
         this.popup_message="";
+        // dialogRef.hide()
         this.showPopUp=false;
         this.router.navigate(['/client']); //,this.autoEcole.id.toString()
       })
     })
     .catch((result:ActionStatus)=>{
       this.popup_message=result.message;
-      this.showPopUp=false;
+      // this.showPopUp=false;
+      // dialogRef.close()
       console.log("Error ",result)
       //show notification erreur
     })

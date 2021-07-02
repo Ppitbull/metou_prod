@@ -64,7 +64,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Tél</label>
-                                    <input class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitedForm && form.controls.tel_admin.errors }" type="tel" formControlName="tel_admin" placeholder="Ex: +237 6 98 29 53 68" />
+                                    <!-- <input class="" [ngClass]="{ 'is-invalid': submitedForm && form.controls.tel_admin.errors }"/> -->
+                                    <app-input-type-number formControlName="tel_admin" [cssClass]="{ 'is-invalid': submitedForm && form.controls.tel_admin.errors ,'form-control':true, 'form-control-lg':true}"></app-input-type-number>                                    
                                     <div *ngIf="submitedForm && form.controls.tel_admin.errors"
                                         class="invalid-feedback text-danger">
                                         <div *ngIf="form.controls.tel_admin.errors.required">Le numéro de téléphone de l'administrateur est obligatoire</div>

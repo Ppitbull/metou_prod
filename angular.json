@@ -28,13 +28,15 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "src/assets/landing/assets/vendor/bootstrap/css/bootstrap.min.css",
               "src/assets/landing/assets/vendor/bootstrap-icons/bootstrap-icons.css",
               "src/assets/landing/assets/vendor/aos/aos.css",
               "src/assets/landing/assets/vendor/remixicon/remixicon.css",
               "src/assets/landing/assets/vendor/swiper/swiper-bundle.min.css",
-              "src/assets/landing/assets/vendor/glightbox/css/glightbox.min.css"
+              "src/assets/landing/assets/vendor/glightbox/css/glightbox.min.css",
+              "./node_modules/intl-tel-input/build/css/intlTelInput.css"
             ],
             "scripts": [
               "src/assets/landing/assets/vendor/bootstrap/js/bootstrap.bundle.js",
@@ -108,6 +110,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
               
               
             ],

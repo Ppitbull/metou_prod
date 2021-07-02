@@ -89,4 +89,6 @@
   
       </section><!-- End Contact Section -->
 
-      <app-popup-loader [text]="popup_message" [show]="showPopUp"></app-popup-loader>
+      <ng-container *ngIf="showPopUp">
+        <app-popup-loader [text]="popup_message" [show]="true"></app-popup-loader>
+      </ng-container>
