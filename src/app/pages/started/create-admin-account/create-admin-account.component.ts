@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MustMatch } from 'src/app/helpers/validators';
-import { CreateAutoEcoleService } from 'src/app/services/create-auto-ecole/create-auto-ecole.service';
+import { CreateAutoEcoleService } from 'src/app/shared/services/create-auto-ecole/create-auto-ecole.service';
+import { MustMatch } from 'src/app/shared/utils/helpers/validators';
 
 @Component({
   selector: 'app-create-admin-account',

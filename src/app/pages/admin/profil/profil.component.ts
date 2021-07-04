@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/entities/accounts';
+import { UserProfilService } from 'src/app/shared/services/user-profil/user-profil.service';
 
 @Component({
   selector: 'app-profil',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profil.component.scss']
 })
 export class ProfilComponent implements OnInit {
-
-  constructor() { }
+  user:User=new User();
+  constructor(private userProfilService:UserProfilService) { }
 
   ngOnInit(): void {
+    this.userProfilService.currentUser.subscribe((user:User)=>{
+      if(user) this.user=user;
+    })
   }
 
 }

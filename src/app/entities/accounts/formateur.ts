@@ -1,4 +1,4 @@
-import { AccountType } from "src/app/utils/enum";
+import { AccountType } from "src/app/shared/utils/enum";
 import { User } from "./user";
 
 export class AutoEcoleFormateur extends User

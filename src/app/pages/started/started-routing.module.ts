@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateAutoecoleComponent } from 'src/app/pages/started/create-autoecole/create-autoecole.component';
-import { PricingPlanComponent } from 'src/app/components/pricing-plan/pricing-plan.component';
 import { StartedLayoutComponent } from 'src/app/layout/started/started-layout/started-layout.component';
 import { CreateAdminAccountComponent } from './create-admin-account/create-admin-account.component';
 import { FinCreationAutoEcoleComponent } from './fin-creation-auto-ecole/fin-creation-auto-ecole.component';
 import { LoginComponent } from './login/login.component';
+import { PricingPlanComponent } from 'src/app/shared/components/pricing-plan/pricing-plan.component';
 
 const routes: Routes = [
   {

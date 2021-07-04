@@ -1,4 +1,4 @@
-import { AccountType } from "src/app/utils/enum";
+import { AccountType } from "src/app/shared/utils/enum";
 import { Entity } from "../entity";
 import { EntityID } from "../entityid";
 
@@ -16,6 +16,36 @@ export class User extends Entity
     dateCreation:String="";
     autoEcoleID:EntityID=new EntityID();
     
+    getPrintableName()
+    {
+        return this.prenom.length>0?this.prenom:this.nom
+    }
+    getFullName()
+    {
+        return `${this.prenom} ${this.nom}`
+    }
+
+    getRole()
+    {
+        let role:String="";
+        switch(this.accountType)
+        {
+            case AccountType.PLATEFROM_ADMIN:
+                role="Super Administrateur";
+                break;
+            case AccountType.AUTOECOLE_ADMIN:
+                role="Administrateur";
+                break;
+            case AccountType.AUTOECOLE_ETUDIANT:
+                role="Etudiant";
+                break;
+            case AccountType.AUTOECOLE_FORMATEUR:
+                role="Formateur";
+                break;
+        }
+        return role;
+    }
+
     hydrate(entity: Record<string | number,any>):void
     {
         for(const key of Object.keys(entity))

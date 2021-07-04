@@ -2,14 +2,13 @@ import { Component, Inject, OnInit, TemplateRef, ViewChild, ViewEncapsulation } 
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { SimpleLoaderComponent } from 'src/app/components/loader/simple-loader/simple-loader.component';
 import { AutoEcoleAdmin } from 'src/app/entities/accounts';
 import { AutoEcole } from 'src/app/entities/autoecole';
 import { PlanBusiness, Tarif, TarifConstante, TarifImage } from 'src/app/entities/tarif';
-import { AutoEcoleProfilService } from 'src/app/services/auto-ecole-profil/auto-ecole-profil.service';
-import { CreateAutoEcoleService } from 'src/app/services/create-auto-ecole/create-auto-ecole.service';
-import { UserProfilService } from 'src/app/services/user-profil/user-profil.service';
-import { ActionStatus } from 'src/app/utils/services/firebase';
+import { AutoEcoleProfilService } from 'src/app/shared/services/auto-ecole-profil/auto-ecole-profil.service';
+import { CreateAutoEcoleService } from 'src/app/shared/services/create-auto-ecole/create-auto-ecole.service';
+import { UserProfilService } from 'src/app/shared/services/user-profil/user-profil.service';
+import { ActionStatus } from 'src/app/shared/utils/services/firebase';
 
 @Component({
   selector: 'app-fin-creation-auto-ecole',
