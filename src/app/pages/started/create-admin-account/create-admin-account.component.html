@@ -38,8 +38,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">Email</label> 
                                     <input class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitedForm && form.controls.email_admin.errors }" formControlName="email_admin" type="email" name="email" placeholder="Votre Email" />
-                                    <div *ngIf="submitedForm && form.controls.email_admin.errors"
-                                        class="invalid-feedback text-danger">
+                                    <div *ngIf="submitedForm && form.controls.email_admin.errors" class="invalid-feedback text-danger">
                                         <div *ngIf="form.controls.email_admin.errors.required">Le nom de l'auto-école est obligatoire</div>
                                         <div *ngIf="form.controls.email_admin.errors.pattern">L'email de l'administrateur doit respecter le format demandé <br> Example: vous@example.com</div>
                                     </div>

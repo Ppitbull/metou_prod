@@ -4,9 +4,9 @@
             <div class="d-table-cell align-middle">
 
                 <div class="text-center mt-4">
-                    <h1 class="h2">Bienvenue</h1>
+                    <h1 class="h2">{{'LOGIN_PAGE.WELCOME_TEXT' | translate}}</h1>
                     <p class="lead">
-                        Connectez-vous pour continuer
+                        {{'LOGIN_PAGE.CONNECT_TO_CONTINUE_TEXT' | translate}}
                     </p>
                 </div>
 
@@ -25,35 +25,35 @@
                                     <label class="form-label">Email</label>
                                     <input type="text" [placeholder]="'LOGIN_PAGE.PLACEHOLDER_EMAIL' | translate" [ngClass]="{ 'is-invalid': submitedForm && form.controls.user_email.errors }" formControlName="user_email" class="form-control form-control-lg" />
                                     <div *ngIf="submitedForm && form.controls.user_email.errors" class="invalid-feedback text-danger">
-                                        <div *ngIf="form.controls.user_email.errors.required">L'email est obligatoire</div>
-                                        <div *ngIf="form.controls.user_email.errors.pattern">L'email de l'administrateur doit respecter le format demandé <br> Example: vous@example.com</div>
+                                        <div *ngIf="form.controls.user_email.errors.required">{{'REQUIRED_INPUT_TEXT.EMAIL_REQUIRED' | translate}}</div>
+                                        <div *ngIf="form.controls.user_email.errors.pattern">{{'REQUIRED_INPUT_TEXT.EMAIL_PATTERN_REQUIRED' | translate}}</div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Mot de passe</label>
-                                    <input class="form-control form-control-lg" type="password" [ngClass]="{ 'is-invalid': submitedForm && form.controls.user_email.errors }" formControlName="user_email" name="mdp" placeholder="Votre mot de passe" />
+                                    <label class="form-label">{{'LOGIN_PAGE.PASSWORD_TEXT' | translate}}</label>
+                                    <input class="form-control form-control-lg" type="password" [ngClass]="{ 'is-invalid': submitedForm && form.controls.mdp.errors }" formControlName="mdp" name="mdp" [placeholder]="'LOGIN_PAGE.PLACEHOLDER_PASSWORD' | translate" />
                                     <small>
-                                        <a href="pages-reset-password.html">Mot de passe oublié?</a>
+                                        <a href="pages-reset-password.html">{{'LOGIN_PAGE.FORGOT_PASSWORD_TEXT' | translate}}</a>
                                     </small>
                                     <div *ngIf="submitedForm && form.controls.mdp.errors" class="invalid-feedback text-danger">
-                                        <div *ngIf="form.controls.mdp.errors.required">Le mot de passe est obligatoire</div>
+                                        <div *ngIf="form.controls.mdp.errors.required">{{'REQUIRED_INPUT_TEXT.PASSWORD_REQUIRED' | translate}}</div>
                                     </div>
                                 </div>
                                 <div>
                                     <label class="form-check">
                                         <input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
                                         <span class="form-check-label">
-                                        Se rappeler de moi
+                                            {{'LOGIN_PAGE.REMEMBER_ME_TEXT' | translate}}
                                         </span>
                                     </label>
                                 </div>
                                 <div class="text-center mt-3">
-                                    <button type="submit" [disabled]="waitResponse"  class="btn btn-lg btn-primary">Connexion</button>
+                                    <button type="submit" [disabled]="waitResponse"  class="btn btn-lg btn-primary">{{'BUTTON_TEXT.CONNEXION_BTN_TEXT' | translate}}</button>
                                     <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
                                 </div>
                                 <div class="mt-4">                                    
-                                    <a routerLink="/" ><i class="bi bi-arrow-left"></i> Retour a la page d'accueil</a>
-                                    <a routerLink="/start/create-autoecole" class="float-end">Creer une auto-ecole</a>
+                                    <a routerLink="/" ><i class="bi bi-arrow-left"></i> {{'BUTTON_TEXT.BACK_TO_HOME_PAGE' | translate}} </a>
+                                    <a routerLink="/start/create-autoecole" class="float-end"> {{'BUTTON_TEXT.CREATE_AUTO_ECOLE' | translate}} </a>
                                     <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
                                 </div>
                             </form>

@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   messageResponse:String=""
   constructor(
     private authService:AuthService,
-    translate:TranslateService
+    public translate:TranslateService
     ) { }
 
   ngOnInit(): void {
@@ -29,7 +29,10 @@ export class LoginComponent implements OnInit {
 
   submit()
   {
+    this.submitedForm=true;
     if(!this.form.valid) return;
+    this.translate.get("MESSAGE.WAIT_MESSAGE").subscribe((value)=> this.messageResponse=value )
+    this.waitResponse=true;
     this.authService.authLogin(this.form.value.user_email,this.form.value.mdp)
     .then((result:ActionStatus)=>{
 
