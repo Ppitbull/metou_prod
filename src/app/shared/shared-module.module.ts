@@ -10,6 +10,7 @@ import { SettingUserProfilComponent } from './components/setting-user-profil/set
 import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
 import { PdfViewerComponent } from './components/pdf-viewer/pdf-viewer.component';
 import { InputTypeNumberComponent } from './components/input-type-number/input-type-number.component';
+import { SettingUsersModule } from './modules/setting-users/setting-users.module';
 
 
 
@@ -29,7 +30,8 @@ import { InputTypeNumberComponent } from './components/input-type-number/input-t
     NgxIntlTelInputModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    SettingUsersModule
   ],
   exports:[
     SettingUserProfilComponent,
@@ -37,7 +39,8 @@ import { InputTypeNumberComponent } from './components/input-type-number/input-t
     SimpleLoaderComponent,
     PopupLoaderComponent,
     PdfViewerComponent,
-    InputTypeNumberComponent
+    InputTypeNumberComponent,
+    SettingUsersModule
   ]
 })
 export class SharedModule { }
