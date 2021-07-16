@@ -11,6 +11,9 @@ import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
 import { PdfViewerComponent } from './components/pdf-viewer/pdf-viewer.component';
 import { InputTypeNumberComponent } from './components/input-type-number/input-type-number.component';
 import { SettingUsersModule } from './modules/setting-users/setting-users.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpLoaderFactory } from './utils/functions/translate.loader';
 
 
 
@@ -31,7 +34,16 @@ import { SettingUsersModule } from './modules/setting-users/setting-users.module
     ReactiveFormsModule,
     MatFormFieldModule,
     MatProgressBarModule,
-    SettingUsersModule
+    SettingUsersModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader:{
+        provide:TranslateLoader,
+        useFactory:HttpLoaderFactory,
+        deps:[HttpClient]
+      },
+      defaultLanguage: "fr"
+    }),
   ],
   exports:[
     SettingUserProfilComponent,
@@ -40,7 +52,8 @@ import { SettingUsersModule } from './modules/setting-users/setting-users.module
     PopupLoaderComponent,
     PdfViewerComponent,
     InputTypeNumberComponent,
-    SettingUsersModule
+    SettingUsersModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }

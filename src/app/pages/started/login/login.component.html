@@ -23,7 +23,7 @@
                             <form [formGroup]="form" (ngSubmit)="submit()">
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                    <input type="text" placeholder="Votre Email" [ngClass]="{ 'is-invalid': submitedForm && form.controls.user_email.errors }" formControlName="user_email" class="form-control form-control-lg" />
+                                    <input type="text" [placeholder]="'LOGIN_PAGE.PLACEHOLDER_EMAIL' | translate" [ngClass]="{ 'is-invalid': submitedForm && form.controls.user_email.errors }" formControlName="user_email" class="form-control form-control-lg" />
                                     <div *ngIf="submitedForm && form.controls.user_email.errors" class="invalid-feedback text-danger">
                                         <div *ngIf="form.controls.user_email.errors.required">L'email est obligatoire</div>
                                         <div *ngIf="form.controls.user_email.errors.pattern">L'email de l'administrateur doit respecter le format demandé <br> Example: vous@example.com</div>

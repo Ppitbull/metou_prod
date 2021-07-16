@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/shared/services/auth/auth.service';
 import { ActionStatus } from 'src/app/shared/utils/services/firebase';
 
@@ -14,7 +15,10 @@ export class LoginComponent implements OnInit {
   submitedForm:boolean=false;
   waitResponse:boolean=false;
   messageResponse:String=""
-  constructor(private authService:AuthService) { }
+  constructor(
+    private authService:AuthService,
+    translate:TranslateService
+    ) { }
 
   ngOnInit(): void {
     this.form=new FormGroup({
