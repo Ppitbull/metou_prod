@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { BehaviorSubject, Subject } from 'rxjs';
 import { User } from 'src/app/entities/accounts';
+import { EntityID } from 'src/app/entities/entityid';
 import { EventService } from '../../utils/services/events/event.service';
 import { FireBaseApi, ActionStatus } from '../../utils/services/firebase';
 import { LocalStorageService } from '../../utils/services/localstorage/localstorage.service';
@@ -65,11 +66,20 @@ export class AuthService {
 
 
   // Login into your account
-  authLogin(email?: string, password?: string): Promise<any> {
+  authLogin(email?: string, password?: string): Promise<ActionStatus> {
 
     return new Promise((resolve, reject) =>  {
-     
+      this.firebaseApi.signInApi(email,password)
+      .then((result:ActionStatus)=>{
+        let userID:EntityID=new EntityID();
+        userID.setId(result.result.user.uid)
+        result.result=userID;
+        resolve(result);
+      })
+      .catch((error:ActionStatus)=>{
+        this.firebaseApi.handleApiError(error);
+        reject(error);
+      })
     });
   }
-
 }

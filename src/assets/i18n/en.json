@@ -9,7 +9,8 @@
         "CONNECT_TO_CONTINUE_TEXT":"Log in to continue"
     },
     "MESSAGE":{
-        "WAIT_MESSAGE":"Please wait..."
+        "WAIT_MESSAGE":"Please wait...",
+        "SUCCESS_AUTH_MESSAGE":"Authentication success"
     },
     "REQUIRED_INPUT_TEXT":{
         "EMAIL_REQUIRED":"Email is required",

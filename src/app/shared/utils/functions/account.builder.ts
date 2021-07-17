@@ -2,7 +2,7 @@ import { AutoEcoleAdmin, AutoEcoleEtudiant, AutoEcoleFormateur, PlateFormAdmin, 
 import { AccountType } from "../enum";
 
 
-export function AccountBuilder(entity:Record<string,any>) : User
+export function accountBuilder(entity:Record<string,any>) : User
 {
     let user:User;
     switch (entity.accountType)

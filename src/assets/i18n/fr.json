@@ -16,7 +16,8 @@
     },
 
     "MESSAGE":{
-        "WAIT_MESSAGE":"Veuillez patientez..."
+        "WAIT_MESSAGE":"Veuillez patientez...",
+        "SUCCESS_AUTH_MESSAGE":"Success de l'authentification"
     },
     "REQUIRED_INPUT_TEXT":{
         "EMAIL_REQUIRED":"L'email est obligatoire",

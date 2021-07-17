@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { User } from 'src/app/entities/accounts';
 import { EntityID } from 'src/app/entities/entityid';
-import { AccountBuilder } from '../../utils/functions/account.builder';
+import { accountBuilder } from '../../utils/functions/account.builder';
 import { ActionStatus } from '../../utils/services/firebase';
 import { FirebaseApi } from '../../utils/services/firebase/FirebaseApi';
 // import { AuthService } from '../auth/auth.service';
@@ -52,33 +52,32 @@ export class UserService {
   }
 
   setUser(user: User) {
-    if (!this.listUser.has(user.id.toString())) { this.listUser.set(user.id.toString(), user) }
+    // if (!this.listUser.has(user.id.toString())) {  }
+    this.listUser.set(user.id.toString(), user)
+    this.usersSubject.next(this.listUser);
+
   }
 
   // recuperer les informations d'un utilisateur
-  getUserById(id: EntityID): Promise<ActionStatus> {
-    console.log("id ",id)
+  getUserById(userID: EntityID,autoEcoleID?:EntityID): Promise<ActionStatus> {
     return new Promise<any>((resolve, reject) => {
-      if (this.listUser.has(id.toString())) {
+      if (this.listUser.has(userID.toString())) {
         let result: ActionStatus = new ActionStatus();
-        result.result = this.listUser.get(id.toString());
+        result.result = this.listUser.get(userID.toString());
         return resolve(result);
       }
-      this.firebaseApi.fetchOnce(`users/${id.toString()}`)
-        .then((result: ActionStatus) => {
-          let user: User = new User();
-          console.log("result, ",result)
-          user.hydrate(result.result);
-          this.listUser.set(user.id.toString(), user);
-          this.usersSubject.next(this.listUser);
-          result.result = user;
 
-          resolve(result);
+      this.firebaseApi.fetch(db_branch_builder.getBranchOfUserInAutoEcole(autoEcoleID,userID))
+        .then((value:ActionStatus)=>{
+          let user:User=accountBuilder(value.result);
+          this.setUser(user);
+          value.result=user;
+          resolve(value);
         })
-        .catch((error) => {
+        .catch((error:ActionStatus)=>{
           this.firebaseApi.handleApiError(error);
           reject(error);
-        });
+        })
     });
   }
 
@@ -117,7 +116,7 @@ export class UserService {
         let users:User[]=[];
         for(let key in data)
         {
-          let user:User=AccountBuilder(data[key]);
+          let user:User=accountBuilder(data[key]);
           this.listUser.set(key,user);
           users.push(user);
         }
