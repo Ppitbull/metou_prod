@@ -39,5 +39,12 @@ export class GuestTopNavComponent implements OnInit {
       e.currentTarget.classList.toggle('bi-x')
     });
   }
+  addActiveClass(e)
+  {
+    this.host.nativeElement.querySelectorAll('.nav-link').forEach(element => {
+      element.classList.remove("active");
+    });
+    e.currentTarget.classList.add("active");
+  }
 
 }
