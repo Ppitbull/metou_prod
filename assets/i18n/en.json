@@ -1,0 +1,25 @@
+{
+    "LOGIN_PAGE":{
+        "PLACEHOLDER_EMAIL":"Your Email",
+        "PLACEHOLDER_PASSWORD":"Your Password",
+        "REMEMBER_ME_TEXT":"Remember me",
+        "WELCOME_TEXT":"Welcome",
+        "PASSWORD_TEXT":"Password",
+        "FORGOT_PASSWORD_TEXT":"Forgot password?",
+        "CONNECT_TO_CONTINUE_TEXT":"Log in to continue"
+    },
+    "MESSAGE":{
+        "WAIT_MESSAGE":"Please wait...",
+        "SUCCESS_AUTH_MESSAGE":"Authentication success"
+    },
+    "REQUIRED_INPUT_TEXT":{
+        "EMAIL_REQUIRED":"Email is required",
+        "EMAIL_PATTERN_REQUIRED":"The email must respect the requested format <br> Example: you@example.com",
+        "PASSWORD_REQUIRED":"Password is required"
+    },
+    "BUTTON_TEXT":{
+        "CONNEXION_BTN_TEXT":"Connection",
+        "BACK_TO_HOME_PAGE":"Back to the homepage",
+        "CREATE_AUTO_ECOLE":"Create a driving school"
+    }
+}

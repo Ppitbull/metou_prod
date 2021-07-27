@@ -1,0 +1,35 @@
+{
+    "LOGIN_PAGE":{
+        "PLACEHOLDER_EMAIL":"Votre Email",
+        "PLACEHOLDER_PASSWORD":"Votre mot de passe",
+
+        "REMEMBER_ME_TEXT":"Se rappeler de moi",
+        "WELCOME_TEXT":"Bienvenue",
+        "PASSWORD_TEXT":"Mot de passe",
+        "FORGOT_PASSWORD_TEXT":"Mot de passe oublié?",
+        "CONNECT_TO_CONTINUE_TEXT":"Connectez-vous pour continuer",
+        
+        "MESSAGE":{
+            "SUCCESS_LOGIN":"Authentification avec success",
+            "INCORECT_LOGIN":"Login ou mot de passe incorrect"
+        }
+    },
+
+    "MESSAGE":{
+        "WAIT_MESSAGE":"Veuillez patientez...",
+        "SUCCESS_AUTH_MESSAGE":"Success de l'authentification"
+    },
+    "REQUIRED_INPUT_TEXT":{
+        "EMAIL_REQUIRED":"L'email est obligatoire",
+        "EMAIL_PATTERN_REQUIRED":"L'email doit respecter le format demandé <br> Exemple: vous@exemple.com",
+        "PASSWORD_REQUIRED":"Le mot de passe est obligatoire"
+    },
+    "BUTTON_TEXT":{
+        "CONNEXION_BTN_TEXT":"Connexion",
+        "BACK_TO_HOME_PAGE":"Retour a la page d'accueil",
+        "CREATE_AUTO_ECOLE":"Creer une auto-ecole"
+    }
+
+
+
+}
